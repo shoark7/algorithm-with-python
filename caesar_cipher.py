@@ -17,3 +17,7 @@ def caesar_cipher_encode(plain_text: str, step=3):
         	(ord('a') if c in LOWER else ord('A'))
         )
     return cipher
+
+
+def caesar_cipher_decode(cipher: str, step=3):
+    return caesar_cipher_encode(cipher, -step)
