@@ -1,9 +1,16 @@
+"""Change given number to target decimal number algorithm
+
+Start Date : 2017/12/24
+End  Date  : 2017/12/24
+"""
+
+
 def xdecimal_number(number, x_dec=2):
     """Return x_dec decimal number with given 10 decimal number
 
     :input:
         number: Wanted 10 decimal number. Should be an int over -1.
-        x_dec: Target decimal. Must be an int over 0. Defaults to 2.
+        x_dec: Target decimal. Must be an int over 1. Defaults to 2.
     :return:
         str. x_dec decimal number.
     """
