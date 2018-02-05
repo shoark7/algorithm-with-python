@@ -5,7 +5,7 @@
 
     github.com/shoark7
 """
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 
 def binary_search(value, target, reverse=False, changed=False):
@@ -44,4 +44,4 @@ def binary_search(value, target, reverse=False, changed=False):
         else:
             return mid
 
-    return search(0, ordered[len(ordered)-1])
+    return search(0, len(ordered)-1)
