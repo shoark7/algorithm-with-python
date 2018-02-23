@@ -8,6 +8,10 @@ Date: 2018/02/23
 
 
 def quick_sort(arr, reverse=False):
+    """Quick sort in Python
+
+    This uses first element of sublist as a pivot.
+    """
     def partition(start, end):
         if end - start < 1:
             return
@@ -46,6 +50,11 @@ def quick_sort(arr, reverse=False):
 
 
 def quick_sort_cache(arr, reverse=True):
+    """Quick sort using cache in Python
+
+    This source is from wikipedia.
+    It uses cache for quick sort.
+    """
     if len(arr) <= 1:
         return arr
 

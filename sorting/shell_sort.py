@@ -5,6 +5,7 @@ Date: 2018/02/20
 
 
 def shell_sort(arr, reverse=False):
+    """Shell sort in Python"""
     gap = len(arr) // 3 + 1
     n = len(arr) // gap
 
