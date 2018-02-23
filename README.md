@@ -11,6 +11,8 @@ Thank you for coming by :satisfied:
 <br>
 
 ## :notebook_with_decorative_cover: Index
+* :ledger: Data structure
+  * [single linked list](https://github.com/shoark7/algorithm-with-python/blob/master/data_structure/linked_list.py)
 * :ledger: [sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/sort_functions.py)
   * [Bubble sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/bubble_sort.py)
   * [Insertion sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/insertion_sort.py)
