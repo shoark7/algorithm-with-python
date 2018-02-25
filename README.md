@@ -12,7 +12,9 @@ Thank you for coming by :satisfied:
 
 ## :notebook_with_decorative_cover: Index
 * :ledger: Data structure
-  * [single linked list](https://github.com/shoark7/algorithm-with-python/blob/master/data_structure/linked_list.py)
+  * [single linked list](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/linked_list.py)
+  * [queue](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/queue.py)
+  * [stack](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/stack.py)
 * :ledger: [sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/sort_functions.py)
   * [Bubble sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/bubble_sort.py)
   * [Insertion sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/insertion_sort.py)
