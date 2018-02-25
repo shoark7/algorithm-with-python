@@ -35,21 +35,7 @@ class Queue:
         self._rear = 0
         self.__buffer = [0 for _ in range(max_size+1)]
         self._max_size = max_size + 1
-
-    def is_empty(self):
-        """Check if the queue is empty"""
-        if self._front == self._rear:
-            return True
-        else:
-            return False
-
-    def is_full(self):
-        """Check if the queue is full"""
-        if (self._front - self._rear) % self._max_size == 1:
-            return True
-        else:
-            return False
-
+        
     def dequeue(self):
         """Pull out the oldest value in the queue"""
         if self.is_empty():
@@ -66,3 +52,17 @@ class Queue:
         self.__buffer[self._rear] = value
         self._rear += 1
         self._rear %= self._max_size
+
+    def is_empty(self):
+        """Check if the queue is empty"""
+        if self._front == self._rear:
+            return True
+        else:
+            return False
+
+    def is_full(self):
+        """Check if the queue is full"""
+        if (self._front - self._rear) % self._max_size == 1:
+            return True
+        else:
+            return False
