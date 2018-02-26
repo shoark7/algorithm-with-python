@@ -1,6 +1,6 @@
 # Algorithm with Python
 
-### Last modified on 23th February, 2018
+### Last modified on 26h February, 2018
 ---
 As you guys know I'm a Python lover and actually I can barely do nothing with others.  
 So I study algorithm and implement it, or do some stuff with it.  
@@ -28,3 +28,6 @@ Thank you for coming by :satisfied:
   * [Binary search](https://github.com/shoark7/algorithm-with-python/blob/master/search-algorithm/binary_search.py)
 * :ledger: prime number
   * [Sieve of Eratosthenes](https://github.com/shoark7/algorithm-with-python/blob/master/prime-number/sieve_of_eratosthenes.py)
+* :ledger: Simple examples
+  * [Get nth Fibonacci number](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/fibonacci.py)
+  * [Caesar cipher](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/caesar_cipher.py)
