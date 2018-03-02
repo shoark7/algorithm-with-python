@@ -2,7 +2,7 @@
 
 
 This contains all sort algorithm in this directory.
-All supports reverse sort and changes target itself(command functions).
+All supports reverse sort and changes arr itself(command functions).
 
 Sorts ways are like below:
     1. Bubble sort
@@ -17,47 +17,46 @@ Date: 2018/02/23
 """
 
 
-def bubble_sort(target, reverse=False):
+def bubble_sort(arr, reverse=False):
     """Bubble sort in Python"""
-    length = len(target)
+    length = len(arr)
     if reverse:
         for i in range(length-1):
             for j in range(length-1):
-                if target[j] < target[j+1]:
-                    target[j], target[j+1] = target[j+1], target[j]
+                if arr[j] < arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
     else:
         for i in range(length-1):
                 for j in range(length-1):
-                    if target[j] > target[j+1]:
-                        target[j], target[j+1] = target[j+1], target[j]
-    return target
+                    if arr[j] > arr[j+1]:
+                        arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
 
 
-def insertion_sort(target, reverse=False):
+def insertion_sort(arr, reverse=False):
     """Insertion sort in Python"""
+    length = len(arr)
+
     if reverse:
-        for i in range(len(target)):
-            tmp = target[i]
-            for j in range(i-1, -1, -1):
-                if tmp > target[j]:
-                    target[j+1] = target[j]
-                    target[j] = tmp
+        for i in range(1, length):
+            while i >= 1:
+                if arr[i] > arr[i-1]:
+                    arr[i], arr[i-1] = arr[i-1], arr[i]
+                    i -= 1
                 else:
                     break
     else:
-        for i in range(len(target)):
-            tmp = target[i]
-            for j in range(i-1, -1, -1):
-                if tmp < target[j]:
-                    target[j+1] = target[j]
-                    target[j] = tmp
+        for i in range(1, length):
+            while i >= 1:
+                if arr[i] < arr[i-1]:
+                    arr[i], arr[i-1] = arr[i-1], arr[i]
+                    i -= 1
                 else:
                     break
+    return arr
 
-    return target
 
-
-def merge_sort(target, reverse=False):
+def merge_sort(arr, reverse=False):
     """Merge sort in Python"""
     def divide(start, end):
         if end - start > 1:
@@ -72,33 +71,33 @@ def merge_sort(target, reverse=False):
         tmp_list = []
         if not reverse:
             while left < mid and right <= end:
-                if target[left] >= target[right]:
-                    tmp_list.append(target[right])
+                if arr[left] >= arr[right]:
+                    tmp_list.append(arr[right])
                     right += 1
                 else:
-                    tmp_list.append(target[left])
+                    tmp_list.append(arr[left])
                     left += 1
         else:
             while left < mid and right <= end:
-                if target[left] <= target[right]:
-                    tmp_list.append(target[right])
+                if arr[left] <= arr[right]:
+                    tmp_list.append(arr[right])
                     right += 1
                 else:
-                    tmp_list.append(target[left])
+                    tmp_list.append(arr[left])
                     left += 1
 
         while left < mid:
-            tmp_list.append(target[left])
+            tmp_list.append(arr[left])
             left += 1
 
         while right <= end:
-            tmp_list.append(target[right])
+            tmp_list.append(arr[right])
             right += 1
 
-        target[start:end+1] = tmp_list
+        arr[start:end+1] = tmp_list
 
-    divide(0, len(target)-1)
-    return target
+    divide(0, len(arr)-1)
+    return arr
 
 
 def quick_sort(arr, reverse=False):
@@ -166,18 +165,18 @@ def quick_sort_cache(arr, reverse=True):
     return quick_sort_cache(less, reverse) + equal + quick_sort_cache(more, reverse)
 
 
-def radix_sort(target, reverse=False):
+def radix_sort(arr, reverse=False):
     """Radix sort in Python
 
     This sort uses 'queue way'. But simply uses list in Python.
-    Also it assumes all elements in target are POSITIVE INTEGERS.
+    Also it assumes all elements in arr are POSITIVE INTEGERS.
     """
     def get_nth_digit(n, d):
         n %= 10 ** d
         return n // 10 ** (d-1)
 
     digit = 0
-    max_value = max(target)
+    max_value = max(arr)
     while max_value:
         digit += 1
         max_value //= 10
@@ -187,28 +186,28 @@ def radix_sort(target, reverse=False):
 
     for d in range(1, digit+1):
         for i in iter_range:
-            for n in target:
+            for n in arr:
                 if get_nth_digit(n, d) == i:
                     sort_queue.append(n)
-        target[:] = sort_queue.copy()  # Can you guess why assignment is like this?
+        arr[:] = sort_queue.copy()  # Can you guess why assignment is like this?
         sort_queue.clear()
-    return target
+    return arr
 
 
-def selection_sort(target, reverse=False):
+def selection_sort(arr, reverse=False):
     """Selecetion sort in Python"""
-    for i in range(len(target)):
+    for i in range(len(arr)):
         tmp = i
         if not reversed:
-            for j in range(i, len(target)):
-                if target[tmp] > target[j]:
+            for j in range(i, len(arr)):
+                if arr[tmp] > arr[j]:
                     tmp = j
         else:
-            for j in range(i, len(target)):
-                if target[tmp] < target[j]:
+            for j in range(i, len(arr)):
+                if arr[tmp] < arr[j]:
                     tmp = j
-        target[tmp], target[i] = target[i], target[tmp]
-    return target
+        arr[tmp], arr[i] = arr[i], arr[tmp]
+    return arr
 
 
 def shell_sort(arr, reverse=False):
