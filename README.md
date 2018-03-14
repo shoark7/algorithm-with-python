@@ -29,5 +29,6 @@ Thank you for coming by :satisfied:
 * :ledger: prime number
   * [Sieve of Eratosthenes](https://github.com/shoark7/algorithm-with-python/blob/master/prime-number/sieve_of_eratosthenes.py)
 * :ledger: Simple examples
+  * [Hanoi tower](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/caesar_cipher.py)
   * [Get nth Fibonacci number](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/fibonacci.py)
   * [Caesar cipher](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/caesar_cipher.py)
