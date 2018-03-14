@@ -27,7 +27,6 @@ def hanoi(n):
         """Move one single disk from given start to dest point
 
         You know our disks are numbered as 1, 2, 3.
-
         so you can guess '6-start-to' is the remainder disk from start and dest disk
         """
         global _MOVE_COUNT
