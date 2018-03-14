@@ -7,6 +7,8 @@ So I study algorithm and implement it, or do some stuff with it.
 I'm sure it will go further to more sophiscated ones.  
 Thank you for coming by :satisfied:
 
+Python version: >= 3.6
+
 <br>
 <br>
 
