@@ -20,11 +20,16 @@ def hanoi(n):
     """
     if not isinstance(n, int) or n <= 0:
        raise Exception("n should be an interger over 0")
-    
+
     global _MOVE_COUNT
 
     def move(n, start, to):
-        """Move one single disk from given start to dest point"""
+        """Move one single disk from given start to dest point
+
+        You know our disks are numbered as 1, 2, 3.
+
+        so you can guess '6-start-to' is the remainder disk from start and dest disk
+        """
         global _MOVE_COUNT
 
         if n == 0:
