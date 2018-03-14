@@ -18,6 +18,9 @@ def hanoi(n):
     It traces disks' movement and print it one by one.
     and last prints its total count of movement.
     """
+    if not isinstance(n, int) or n <= 0:
+       raise Exception("n should be an interger over 0")
+    
     global _MOVE_COUNT
 
     def move(n, start, to):
