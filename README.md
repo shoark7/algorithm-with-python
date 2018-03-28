@@ -42,10 +42,8 @@ Python version: >= 3.6
   * [No.008 : 1000자리 숫자 안에서 이어지는 5자리 숫자의 곱 중 최대값은?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro008_largest_substring.py)
   * [No.009 : a + b + c = 1000 이 되는 피타고라스 수](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro009_pythagoras.py)
   * [No.010 : 이백만 이하 소수의 합](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro010_prime_sum.py)
-  
   * [No.012 :	500개 이상의 약수를 갖는 가장 작은 삼각수는?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro012_triangle_number.py)
-  
-  * [No.013 : 50자리 숫자 100개를 더한 값의 첫 10자리 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro013_first10.py)
+  * [No.013 : 50자리 숫자 100개를 더한 값의 첫 10자리 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro013_first10.py)
   * [No.014 : 백만 이하로 시작하는 우박수 중 가장 긴 과정을 거치는 것은?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro014_max_collaz.py)
   * [No.015 : 20×20 격자의 좌상단에서 우하단으로 가는 경로의 수](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro015_path_to_lattice.py)
   * [No.016 : 2 ^ 1000의 각 자리수를 모두 더하면?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro016_sum_digit.py)
