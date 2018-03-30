@@ -49,6 +49,7 @@ Python version: >= 3.6
   * [No.016 : 2 ^ 1000의 각 자리수를 모두 더하면?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro016_sum_digit.py)
   * [No.017 : 1부터 1000까지 영어로 썼을 때 사용된 글자의 개수는?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro017_length_of_digit.py)
   * [No.018 : 삼각형을 따라 내려가면서 합이 최대가 되는 경로 찾기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro018_max_line_sum.py)
+  * [No.019 : 20세기에서, 매월 1일이 일요일인 경우는 몇 번?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro019_monday.py)
   * [No.020 : 100!의 자리수를 모두 더하면?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro020_sum_digit2.py)
   * [No.022 : 영문 이름 점수 합계 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro022_name_value.py)
   * [No.027 : 연속되는 n에 대해 가장 많은 소수를 만들어내는 2차식 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro027_euler_equation.py)
