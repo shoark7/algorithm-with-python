@@ -23,6 +23,7 @@ from functools import reduce
 def count_divisors(n):
     divisor = 2
     divisor_list = []
+    total_count = 1
 
     while n > 1:
         d_count = 0
@@ -32,10 +33,9 @@ def count_divisors(n):
             d_count += 1
 
         divisor += 1
-        if d_count > 0:
-            divisor_list.append(d_count)
+        total_count *= (d_count + 1)
 
-    return reduce(lambda x, y: x * (y+1), [1]+divisor_list)
+    return total_count
 
 
 for i in range(1, 11):
