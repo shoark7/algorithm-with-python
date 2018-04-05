@@ -52,4 +52,7 @@ Python version: >= 3.6
   * [No.019 : 20세기에서, 매월 1일이 일요일인 경우는 몇 번?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro019_monday.py)
   * [No.020 : 100!의 자리수를 모두 더하면?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro020_sum_digit2.py)
   * [No.022 : 영문 이름 점수 합계 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro022_name_value.py)
+  * [No.023 : 두 초과수의 합으로 나타낼 수 없는 모든 양의 정수의 합은?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro023_abun_n_sum.py)
+  * [No.025 : 피보나치 수열에서 처음으로 1000자리가 되는 항은 몇 번째?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro025_fibo_d.py)
   * [No.027 : 연속되는 n에 대해 가장 많은 소수를 만들어내는 2차식 구하기](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro027_euler_equation.py)
+  * [No.029 : 	2 ≤ a ≤ 100 이고 2 ≤ b ≤ 100인 a, b로 만들 수 있는 a ^ b의 개수](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro029_all_squares.py)
