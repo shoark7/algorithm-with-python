@@ -7,10 +7,10 @@ import time
 
 cities1 = ['Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA', 'Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA']
 cities2 = ['Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA', 'SanFrancisco', 'Seoul', 'Rome', 'Paris', 'Jeju', 'NewYork', 'Rome']
-
+cities3 = ['Jeju', 'Pangyo', 'Seoul', 'NewYork', 'LA', 'SanFrancisco', 'Seoul', 'Rome', 'Paris', 'Jeju', 'NewYork', 'Rome']
 
 if __name__ == '__main__':
-    LENGTH = 3
+    LENGTH = 5
     HIT_TIME = 1
     MISS_TIME = 5
     cache = [' ' for _ in range(LENGTH)]
@@ -21,20 +21,23 @@ if __name__ == '__main__':
     next_value = 1
 
     
-    for city in cities2:
-        is_hitted = False
-        for i in range(LENGTH):
-            if not is_hitted and city == cache[i] :
-                is_hitted = True
-                hitted_index = i
-            oldest = i if tracer[i] < tracer[oldest] else oldest
-        if is_hitted:
-            tracer[hitted_index] += next_value
-            next_value += 1
-            total_time += 1
-        else:
-            tracer[oldest] = next_value
-            next_value += 1
-            cache[oldest] = city
-            total_time += 5
-    print(total_time)
+    if not LENGTH:
+        print(len(cities4) * MISS_TIME)
+    else:
+        for city in cities3:
+            is_hitted = False
+            for i in range(LENGTH):
+                if not is_hitted and city == cache[i] :
+                    is_hitted = True
+                    hitted_index = i
+                oldest = i if tracer[i] < tracer[oldest] else oldest
+            if is_hitted:
+                tracer[hitted_index] += next_value
+                next_value += 1
+                total_time += 1
+            else:
+                tracer[oldest] = next_value
+                next_value += 1
+                cache[oldest] = city
+                total_time += 5
+        print(total_time)
