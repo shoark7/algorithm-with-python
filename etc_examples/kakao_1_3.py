@@ -20,9 +20,9 @@ if __name__ == '__main__':
     oldest = 0
     next_value = 1
 
-    
+
     if not LENGTH:
-        print(len(cities4) * MISS_TIME)
+        print(len(cities3) * MISS_TIME)
     else:
         for city in cities3:
             is_hitted = False
