@@ -29,7 +29,7 @@ Python version: >= 3.6
 * :ledger: search
   * [Binary search](https://github.com/shoark7/algorithm-with-python/blob/master/search-algorithm/binary_search.py)
 * :ledger: Combinations & Permutations
-  * [Combinations without replacement](https://github.com/shoark7/algorithm-with-python/blob/master/combinations_permutations/combinations.py)
+  * [Combinations without replacement](https://github.com/shoark7/algorithm-with-python/blob/master/combinations_permutations/combinations.py)
 * :ledger: prime number
   * [Sieve of Eratosthenes](https://github.com/shoark7/algorithm-with-python/blob/master/prime-number/sieve_of_eratosthenes.py)
 * :ledger: Simple examples
@@ -37,7 +37,7 @@ Python version: >= 3.6
   * [Get nth Fibonacci number](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/fibonacci.py)
   * [Greatest Common Divisor](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/gcd.py)
   * [Caesar cipher](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/caesar_cipher.py)
-  * [Are two words anagrams](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/anagram.py)
+  * [Are two words anagrams?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/anagram.py)
 * :ledger: [Euler project](http://euler.synap.co.kr/)
   * [No.004 : 세자리 수를 곱해 만들 수 있는 가장 큰 대칭수](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro004_largest_palindrome.py)
   * [No.005 : 1 ~ 20 사이의 어떤 수로도 나누어 떨어지는 가장 작은 수](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/project-euler/pro005_lcm.py)
