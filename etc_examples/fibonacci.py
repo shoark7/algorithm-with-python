@@ -52,3 +52,48 @@ def fibonacci_cache2(nth):
         return 1
     else:
         return fibonacci_cache2(nth-1) + fibonacci_cache2(nth-2)
+
+
+# Matrix mulplication
+def fibonacci_matrix(n):
+    BASE = [[1, 1], [1, 0]]
+    ZERO = [[1, 0], [0, 1]]
+    L = 2
+    k = 0
+    while 2 ** k <= n:
+        k += 1
+    k -= 1
+    rest = n - 2 ** k
+
+    if n == 0:
+        return ZERO
+    elif n == 1:
+        return BASE
+
+
+    def two_by_two(a, b):
+        L = 2
+        tmp = [[0, 0], [0, 0]]
+        for i in range(L):
+            for j in range(L):
+                for k in range(L):
+                    tmp[i][j] += a[i][k] * b[k][j]
+        return tmp
+
+
+    def _k_th_matrix(k):
+        base = BASE.copy()
+        for _ in range(k):
+            base = two_by_two(base, base)
+
+        return base
+
+    matrix = _k_th_matrix(k)
+    print(matrix)
+
+    if rest == 0:
+        return matrix
+    else:
+        return two_by_two(matrix, fibonacci_matrix(rest))
+
+
