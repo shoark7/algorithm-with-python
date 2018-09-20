@@ -25,7 +25,7 @@ class matrix_undirected_weight:
     """
     def __init__(self, n):
         self.matrix = [[0 for _ in range(n+1)] for _ in range(n+1)]
-        self.vector_n = len(self.matrix)
+        self.vector_n = n
 
 
     def add_edge(self, src, dest, weight=1):

@@ -97,3 +97,26 @@ def fibonacci_matrix(n):
         return two_by_two(matrix, fibonacci_matrix(rest))
 
 
+def fibonacci_matrix(n, __cache={1: [[1, 1], [1, 0]],
+                                 0: [[1, 0], [0, 1]],
+                                }):
+
+    def matrix_mul(a, b):
+        new = [[0, 0], [0, 0]]
+        for i in range(2):
+            for j in range(2):
+                for k in range(2):
+                    new[i][j] += a[k][j] * b[i][k]
+        return new
+
+    def get_matrix(n):
+        if n in __cache:
+            return __cache[n]
+
+        m = matrix_mul(get_matrix(n//2), get_matrix(n//2))
+        if n % 2 == 1:
+            m = matrix_mul(__cache[1], m)
+        __cache[n] = m
+        return m
+
+    return get_matrix(n)[1][0]
