@@ -28,26 +28,27 @@ def exhaustive_match(pattern: str, string: str):
 
 
 # memoization
-def memoized_match(pattern, string):
-    len_p, len_s = len(pattern), len(string)
-    cache = [[-1 for _ in range(len_s+1)] for _ in range(len_p+1)]
+def memoized_match(pattern, word):
+    len_p, len_w = len(pattern), len(word)
+    cache = [[-1 for _ in range(len_w+1)] for _ in range(len_p+1)]
+    def match(pp, wp):
+        if cache[pp][wp] != -1:
+            return cache[pp][wp]
 
-    def match(p, s):
-        if cache[p][s] != -1:
-            return cache[p][s]
+        if pp < len_p and wp < len_w and (pattern[pp] == '?' or pattern[pp] == word[wp]):
+            cache[pp][wp] = match(pp+1, wp+1)
+            return cache[pp][wp]
 
-        while p < len_p and s < len_s and (pattern[p] == '?' or pattern[p] == string[s]):
-            cache[p][s] = match(p+1, s+1)
-            return cache[p][s]
+        if pp == len_p:
+            cache[pp][wp] = (wp == len_w)
+            return cache[pp][wp]
 
-        if p == len_p:
-            cache[p][s] = (s == len_s)
-            return cache[p][s]
-
-        if pattern[p] == '*':
-            if match(p+1, s) or (s < len_s and  match(p, s+1)):
-                cache[p][s] = True
+        if pattern[pp] == '*':
+            if match(pp+1, wp) or (wp < len_w and match(pp, wp+1)):
+                cache[pp][wp] = True
                 return True
+
+        cache[pp][wp] = False
         return False
 
     return match(0, 0)
