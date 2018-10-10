@@ -40,7 +40,7 @@ def memoized_match(pattern, word):
             return cache[pp][wp]
 
         if pp == len_p:
-            cache[pp][wp] = (wp == len_w)
+            cache[pp][wp] = (wp == len_p)
             return cache[pp][wp]
 
         if pattern[pp] == '*':
