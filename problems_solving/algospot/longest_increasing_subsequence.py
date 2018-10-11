@@ -16,23 +16,23 @@ def lis_all(arr):
         for j in range(i+1, len(arr)):
             if arr[i] < arr[j]:
                 tmp.append(arr[j])
-        ret = max(ret, 1+lis(tmp))
-    return tmp
+        ret = max(ret, 1+lis_all(tmp))
+    return ret
 
 
 # In dynamic programming
 def lis(arr):
     arr = [-1] + arr
     cache = [-1 for _ in range(len(arr))]
-    ans = -1
 
     def search(start):
         if cache[start] != -1:
             return cache[start]
-        cache[start] = 1
+        ret = 1
         for i in range(start+1, len(arr)):
             if arr[start] < arr[i]:
-                cache[start] = max(cache[start], search(i)+1)
+                ret = max(ret, search(i)+1)
+        cache[start] = ret
         return cache[start]
 
     return search(0) - 1
