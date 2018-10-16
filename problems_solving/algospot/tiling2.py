@@ -12,6 +12,9 @@ Get the answer of mod by 1000000007
 1
 8
 782204094
+
+ID : TILING2
+url: https://algospot.com/judge/problem/read/TILING2
 """
 def get_tile_ways(n):
     if n == 1:
