@@ -11,8 +11,7 @@ def max_path_sum(triangle):
     def sub_sum(y, x):
         if y == length - 1:
             return triangle[y][x]
-
-        if cache[y][x] != -1:
+        elif cache[y][x] != -1:
             return cache[y][x]
         else:
             cache[y][x] = max(sub_sum(y+1, x), sub_sum(y+1, x+1)) + triangle[y][x]
