@@ -98,10 +98,11 @@ def j(str1, str2):
     Range of the index is between 0 and 1(including both ends).
     Also, if two strings are all empty strings, just return 1 because of ZeroDivisionError.
     """
+    if not str1 and not str2:
+        return 1
+
     set_1 = process_str(str1)
     set_2 = process_str(str2)
-    if len(set_1) == 0 and len(set_2) == 0:
-        return 1
     caps, cups = caps_cups(set_1, set_2)
     return len(caps) / len(cups)
 
