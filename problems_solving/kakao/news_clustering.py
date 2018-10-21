@@ -25,26 +25,11 @@ def process_str(str1):
         A LIST of sub strings of length 2. EX) ['ab', 'bc', 'df', 'fs']
     """
     str1 = str1.upper()
-    sub_strs = []
     words = []
 
-    def get_parts(i, part):
-        if i == len(str1):
-            if part.isalpha() and len(part) >= 2:
-                sub_strs.append(part)
-            return
-        elif str1[i].isalpha():
-            get_parts(i+1, part+str1[i])
-        else:
-            if len(part) >= 2:
-                sub_strs.append(part)
-            get_parts(i+1, '')
-
-
-    get_parts(0, '')
-    for sub in sub_strs:
-        for i in range(len(sub)-1):
-            words.append(sub[i:i+2])
+    for i in range(len(str1)-1):
+        if str1[i:i+2].isalpha():
+            words.append(str1[i:i+2])
     return words
 
 
