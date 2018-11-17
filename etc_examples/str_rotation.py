@@ -11,7 +11,6 @@ def rotate_modulo(s, m):
         new[(i-m) % n] = s[i]
     return ''.join(new)
 
-
 # 2. Use string reverse formula
 def rotate_reverse(s, m):
     if m <= 0 or not s:
@@ -44,20 +43,20 @@ def rotate_shell(s, m):
     elif m >= len(s):
         return rotate_shell(s, m % len(s))
 
+    s = [c for c in s]
     length = len(s)
-    new = ['' for _ in range(length)]
-    tmp = new[0]
+    tmp = s[0]
     to = 0
     for i in range(length-1):
         _from = (to + m) % length
-        new[to] = s[_from]
+        s[to] = s[_from]
         to = _from
 
-    new[to] = tmp
-    return ''.join(new)
+    s[to] = tmp
+    return ''.join(s)
 
 
-# 4. Use Divide and Conquer
+# 4. Use Divide andConquer
 def rotate_divide(s, m):
     if m <= 0 or not s:
         return s
