@@ -17,8 +17,9 @@ INF = 987654321
 def min_cost(arr):
     length = len(arr)
     cache = [[-1 for _ in range(3)] for _ in range(length)]
-    colors = RGB
-    
+    colors = 'RGB'
+    ans = ['' for _ in range(length)]
+
     def cal_cost(loc, color):
         if loc < 0:
             return 0
@@ -30,25 +31,36 @@ def min_cost(arr):
                 tmp = min(tmp, cal_cost(loc-1, c) + arr[loc][color])
         cache[loc][color] = tmp
         return tmp
-    
+
     def nth_min_cost(loc):
         return min(cal_cost(loc, i) for i in range(3))
-    
-    def generate(loc):
+
+    def generate(loc, last):
         if loc < 0:
-            return 
-        for i in range(3):
-            if cal_cost(loc, i) == nth_min_cost(loc):
-                return generate(loc-1) + colors[i]
-    
+            return ''
+        if cal_cost(loc, (last+1) % 3) < cal_cost(loc, (last+2) % 3):
+            last = (last + 1) % 3
+        else:
+            last = (last + 2) % 3
+        ans[loc] = colors[last]
+        generate(loc-1, last)
+
     #### If you want to get minimum cost
     return nth_min_cost(length-1)
 
     #### If you want to get a list of colors that makes up minimum costs
-    # return generate(length-1)
+    """
+    min_value = nth_min_cost(length-1) + 1
+    for i in range(3):
+        if cal_cost(length-1, i) < min_value:
+            min_value = cal_cost(length-1, i)
+            last = i
+    ans[length-1] = colors[last]
+    generate(length-2, last)
+    return ''.join(ans)
+    """
 
-
-if __name__ == __main__:
+if __name__ == '__main__':
     N = int(input())
     arr = []
     for _ in range(N):
