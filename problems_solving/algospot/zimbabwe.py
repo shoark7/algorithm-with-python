@@ -16,8 +16,7 @@
 url: https://algospot.com/judge/problem/read/ZIMBABWE
 ID : ZIMBABWE
 """
-def zimbabwe(e, m):
-    MOD = int(1e9) + 7
+def zimbabwe(e, m, MOD=None):
     e = str(e)
     sorted_str = ''.join(sorted(e))
     N = len(sorted_str)
@@ -25,7 +24,7 @@ def zimbabwe(e, m):
 
     def price(index, taken, mod, less):
         if index == N:
-            return 1 if less & (mod == 0) else 0
+            return 1 if less and (mod == 0) else 0
         elif cache[taken][mod][less] != -1:
             return cache[taken][mod][less]
 
@@ -41,7 +40,8 @@ def zimbabwe(e, m):
                 nxt_mod = (mod * 10 + int(sorted_str[nxt])) % m
                 nxt_less = less or e[index] > sorted_str[nxt]
                 ret += price(index+1, nxt_taken, nxt_mod, nxt_less)
-                ret %= MOD
+                if MOD:
+                    ret %= MOD
 
         cache[taken][mod][less] = ret
         return ret
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     for _ in range(C):
         e, m = (int(n) for n in input().split())
-        ans.append(zimbabwe(e, m))
+        ans.append(zimbabwe(e, m, int(1e9)+7))
 
     for n in ans:
         print(n)
