@@ -11,7 +11,8 @@ YES
 NO
 YES
 
-https://algospot.com/judge/problem/read/BRACKETS2
+url : https://algospot.com/judge/problem/read/BRACKETS2
+ID  : BRACKETS2
 """
 OPENS = ['(', '{', '[']
 CLOSES = [')', '}', ']']
