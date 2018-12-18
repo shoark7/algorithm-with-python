@@ -8,6 +8,9 @@ sacheon hansan myeongnyang noryang okpo
 :return:
 6/10
 
+:condition:
+Do not reduce the ratio.
+
 url: https://www.acmicpc.net/problem/3077
 """
 def get_score(answers, submitted):
