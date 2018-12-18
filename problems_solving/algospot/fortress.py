@@ -53,11 +53,11 @@ class Node:
 def max_climbs(walls):
     # MAX( leaf - leaf or leaf - Root )
     longest = 0
+
     def find(root):
         nonlocal longest
 
         node = Node(root, walls)
-
 
         # Every Tree node has attribute named 'children' which stores children nodes
         heights = []

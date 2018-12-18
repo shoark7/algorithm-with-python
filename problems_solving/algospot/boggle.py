@@ -1,41 +1,65 @@
 """Solve Boggle problem in algospot
 
-It has some meaningful solving ways and I'll make it one by one in a same file
+:input:
+1
+URLPM
+XPRET
+GIAET
+XTNZY
+XOQRS
+6
+PRETTY
+GIRL
+REPEAT
+KARA
+PANDORA
+GIAZAPX
+
+:return:
+PRETTY YES
+GIRL YES
+REPEAT YES
+KARA NO
+PANDORA NO
+GIAZAPX YES
 
 
-https://algospot.com/judge/problem/read/BOGGLE
+url: https://algospot.com/judge/problem/read/BOGGLE
+ID : BOGGLE
 """
-from collections import namedtuple
-
-Point = namedtuple('Point', ['y', 'x'])
-COORDS = [Point(-1, -1), Point(-1, 0), Point(-1, 1),
-          Point(0, -1), Point(0, 0), Point(0, 1),
-          Point(1, -1), Point(1, 0), Point(1, 1),]
 SIZE = 5
+MOVES = [(x, y) for x in range(-1, 2) for y in range(-1, 2) if not (x == 0 and y == 0)]
 
-def is_in_range(y, x):
-    return True if 0 <= x <= SIZE and 0 <= y <= SIZE else False
+def board_to_int(board):
+    ret = 0
+    size = len(board)
+    for x in range(size):
+        for y in range(size):
+            ret *= size
+            ret += board[x][y]
+    return ret
 
 
-def has_word(y, x, word):
-    if not is_in_range(y, x):
-        return False
-    if board[y][x] != word[0]:
-        return False
-    if len(word) == 1:
-        return True
+def has_word(board, word):
+    global cache, MOVES, SIZE
 
-    for direction in range(len(COORDS)):
-        newy, newx = y + directiony, x + direction.x
-        if hasword(newy, newyx, word[1:]):
-            return True
-    return False
+
 
 
 if __name__ == '__main__':
-    board = [list('URLPM'), list('XPRET'), list('GIAET'),
-             list('XTNZY'), list('XOQRS')]
-    tests = ['PRETTY', 'GIRL', 'REPEAT', 'KARA', 'PANDORA', 'GIAZAPX']
+    C = int(input())
+    ans = []
 
-    for word in tests:
-        print(word, 'YES' if has_word(word) else 'NO')
+    for _ in range(C):
+        board = []
+        for _ in range(SIZE):
+            board.append(input())
+        cache = [[[-1 for _ in range(26)] for _ in range(SIZE)] for _ in range(SIZE)]
+        N = int(input())
+        for _ in range(N):
+            word = input()
+            # ans.append(word + (' YES' if has_word(board, word) else ' NO'))
+            ans.append(word + (' YES' if has_word(board) else ' NO'))
+
+    for n in ans:
+        print(n)

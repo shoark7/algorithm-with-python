@@ -25,6 +25,7 @@ def min_cost(arr):
             return 0
         elif cache[loc][color] != -1:
             return cache[loc][color]
+
         tmp = INF
         for c in range(3):
             if c != color:
@@ -49,7 +50,6 @@ def min_cost(arr):
     return nth_min_cost(length-1)
 
     #### If you want to get a list of colors that makes up minimum costs
-    """
     min_value = nth_min_cost(length-1) + 1
     for i in range(3):
         if cal_cost(length-1, i) < min_value:
@@ -58,7 +58,7 @@ def min_cost(arr):
     ans[length-1] = colors[last]
     generate(length-2, last)
     return ''.join(ans)
-    """
+
 
 if __name__ == '__main__':
     N = int(input())

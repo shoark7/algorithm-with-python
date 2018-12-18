@@ -22,7 +22,6 @@ class Sieve:
                 self._set_composite(j)
         print(f"Sieve of size {size} is initialized")
 
-
     def is_prime(self, n):
         if n > self._size:
             raise ValueError(f"This sieve only support integers equal to or less than {self._size}")
@@ -30,3 +29,19 @@ class Sieve:
 
     def _set_composite(self, n):
         self._sieve[n >> 3] &= ~(1 << (n & 7))
+
+
+SIZE = 2 ** 16
+SIZE_SQRT = int(SIZE  ** (1/2))
+sieve = [1 for _ in range(SIZE+1)]
+sieve[0] = sieve[1] = 0
+TEST = 20
+
+for i in range(2, SIZE_SQRT+1):
+    if sieve[i] == 1:
+        for j in range(i*i, SIZE+1, i):
+            sieve[j] = 0
+
+for i in range(2, TEST+1):
+    print(f"{i:>3} : {'prime' if sieve[i] else 'composite'}")
+

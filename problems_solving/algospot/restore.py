@@ -40,7 +40,7 @@ def shortest_length(strs):
     length = len(strs)
     cache = [[-1 for _ in range(1<<length)] for _ in range(length)]
     overlaps = [[0 for _ in range(length)] for _ in range(length)]
-    ALL_USED = -1 + (1<<length)
+    ALL_USED = (1<<length) - 1
 
     def shared(prefix, suffix):
         i = 0
