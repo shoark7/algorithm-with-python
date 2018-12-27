@@ -1,11 +1,5 @@
 """Solve algospot picnic problem
 
-
-ID : PICNIC
-
-
-https://algospot.com/judge/problem/read/PICNIC
-
 :input:
 2 1
 0 1
@@ -18,53 +12,53 @@ https://algospot.com/judge/problem/read/PICNIC
 1
 3
 4
+
+ID : PICNIC
+url: https://algospot.com/judge/problem/read/PICNIC
 """
-MAX_N = 10
-chosen = [0 for _ in range(MAX_N)]
-friends_matrix = [[0 for _ in range(MAX_N)] for _ in range(MAX_N)]
-answer_list = []
+def get_ways(are_friends):
+    N = len(are_friends)
+    taken = [0] * N
+
+    def find(left):
+        if left == 0:
+            return 1
+
+        for i in range(N):
+            if not taken[i]:
+                nxt = i
+                break
+
+        ans = 0
+        for i in range(nxt+1, N):
+            if not taken[i] and are_friends[i][nxt]:
+                taken[i] = 1
+                taken[nxt] = 1
+                ans += find(left-2)
+                taken[i] = 0
+                taken[nxt] = 0
+        return ans
+
+    return find(N)
 
 
-def clear_matrix(n, chosen, friends_matrix):
-    for i in range(n):
-        for j in range(n):
-            friends_matrix[i][j] = 0
-    chosen = [0 for _ in range(n)]
-    return chosen, friends_matrix
+if __name__ == '__main__':
+    C = int(input())
+    ans = []
 
+    for _ in range(C):
+        n, m = (int(n) for n in input().split())
+        are_friends = [[0] * n for _ in range(n)]
+        rels = [int(n) for n in input().split()]
+        i = 0
 
-def find_couples(n, chosen, friends_matrix):
-    ans = 0
-    first = -1
-    for i in range(n):
-        if not chosen[i]:
-            first = i
-            break
-    # 기저 사례 : 모든 조합 완성 시 한 가지 경우의 수 반환
-    if first == -1:
-        return 1
+        while i < len(rels):
+            are_friends[rels[i]][rels[i+1]] = 1
+            are_friends[rels[i+1]][rels[i]] = 1
+            i += 2
 
-    for j in range(first+1, n):
-        if not chosen[j] and friends_matrix[first][j]:
-            chosen[first] = 1
-            chosen[j] = 1
-            ans += find_couples(n, chosen, friends_matrix)
-            chosen[first] = 0
-            chosen[j] = 0
-    return ans
+        ans.append(get_ways(are_friends))
 
+    for n in ans:
+        print(n)
 
-C = int(input())
-for _ in range(C):
-    n, m = (int(x) for x in input().split())
-    chosen, friends_matrix = clear_matrix(n, chosen, friends_matrix)
-    l = [int(x) for x in input().split()]
-    for i in range(m):
-        a, b = l[i*2], l[i*2+1]
-        friends_matrix[a][b] = 1
-
-    answer_list.append(find_couples(n, chosen, friends_matrix))
-
-
-for n in answer_list:
-    print(n)
