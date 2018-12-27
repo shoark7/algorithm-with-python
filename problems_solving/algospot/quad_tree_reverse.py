@@ -9,10 +9,6 @@ I have to return a string of the turned out image.
 
 https://algospot.com/judge/problem/read/QUADTREE
 """
-# MAX_SIZE = 2 ** 20
-# image_board = [[None for _ in range(MAX_SIZE)] for _ in range(MAX_SIZE)]
-
-
 def decompress(compressed_img: list, pointer: int, y: int, x: int, size: int):
     char = compressed_img[pointer]
     pointer += 1
@@ -36,10 +32,10 @@ def reverse_compressed_img(compressed_img):
         point += 1
         if head == 'w' or head == 'b':
             return head
-        upper_left = _reverse(ul)
-        upper_right = _reverse(ur)
-        lower_left = _reverse(ll)
-        lower_right = _reverse(lr)
+        upper_left = _reverse()
+        upper_right = _reverse()
+        lower_left = _reverse()
+        lower_right = _reverse()
 
         return 'x' + lower_left + lower_right + upper_left + upper_right
 
