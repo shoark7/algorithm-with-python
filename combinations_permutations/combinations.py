@@ -2,27 +2,24 @@
 
 
 Source referred in Python org.
-Date: 2018/04/26
+Last Modified Date: 2018/12/30
 """
-def combinations(iterable, r):
-    """Make combination without replacement generator
+def combination(arr, r):
+    arr = sorted(arr)
+    used = [0 for _ in range(len(arr))]
 
-    This functions returns a generator which outputs a tuple one by one
-    until meets StopIteration.
-    """
-    n = len(iterable)
-    if n < r:
-        return ()
-    indices = list(range(r))
-
-    yield tuple(iterable[i] for i in indices)
-    while True:
-        for i in reversed(range(r)):
-            if indices[i] != n - r + i:
-                break
-        indices[i] += 1
-        for j in range(i+1, r):
-            indices[j] = indices[j-1] + 1
-        yield tuple(iterable[i] for i in indices)
-        if indices[0] == n - r:
+    def generate(chosen):
+        if len(chosen) == r:
+            print(chosen)
             return
+
+        start = arr.index(chosen[-1]) + 1 if chosen else 0
+        for nxt in range(start, len(arr)):
+            if used[nxt] == 0 and (nxt == 0 or arr[nxt-1] != arr[nxt] or used[nxt-1]):
+                chosen.append(arr[nxt])
+                used[nxt] = 1
+                generate(chosen)
+                chosen.pop()
+                used[nxt] = 0
+    generate([])
+
