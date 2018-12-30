@@ -15,6 +15,7 @@ url: https://algospot.com/judge/problem/read/INSERTION
 ID : INSERTION
 """
 import random
+from sys import stdin
 
 
 def split(root, key):
@@ -138,11 +139,11 @@ def before_sort(shifted):
 
 
 if __name__ == '__main__':
-    C = int(input())
+    C = int(stdin.readline().strip())
     ans = []
     for _ in range(C):
-        input()
-        shifted = [int(n) for n in input().split()]
+        stdin.readline()
+        shifted = [int(n) for n in stdin.readline().strip().split()]
         ans.append(before_sort(shifted))
 
     for n in ans:
