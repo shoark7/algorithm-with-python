@@ -1,7 +1,9 @@
 # Algorithm with Python
 
-### Last modified on 23 March, 2018
+### Last modified on 2018/12/30
+
 ---
+
 As you guys know I'm a Python lover and actually I can barely do nothing with others.  
 So I study algorithm and implement it, or do some stuff with it.  
 I'm sure it will go further to more sophiscated ones.  
@@ -10,13 +12,12 @@ Thank you for coming by :satisfied:
 Python version: >= 3.6
 
 <br>
-<br>
 
 ## :notebook_with_decorative_cover: Index
 * :ledger: Data structure
-  * [single linked list](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/linked_list.py)
-  * [stack](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/stack.py)
-  * [queue](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/queue.py)
+  * [Single linked list](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/linked_list.py)
+  * [Stack](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/stack.py)
+  * [Queue](https://github.com/shoark7/algorithm-with-python/blob/master/simple_data_structure/queue.py)
 
 * :ledger: [sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/sort_functions.py)
   * [Bubble sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/bubble_sort.py)
@@ -26,10 +27,13 @@ Python version: >= 3.6
   * [Radix sort(POSITIVE INTEGERS only)](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/radix_sort.py)
   * [Selection sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/selection_sort.py)
   * [Shell sort](https://github.com/shoark7/algorithm-with-python/blob/master/sorting/shell_sort.py)
+
 * :ledger: search
   * [Binary search](https://github.com/shoark7/algorithm-with-python/blob/master/search-algorithm/binary_search.py)
+
 * :ledger: Combinations & Permutations
-  * [Combinations without replacement](https://github.com/shoark7/algorithm-with-python/blob/master/combinations_permutations/combinations.py)
+  * [Combination](https://github.com/shoark7/algorithm-with-python/blob/master/combinations_permutations/combinations.py)
+  * [Permutation](https://github.com/shoark7/algorithm-with-python/blob/master/combinations_permutations/permutation.py)
 
 * :ledger: prime number
   * [Sieve of Eratosthenes](https://github.com/shoark7/algorithm-with-python/blob/master/prime-number/sieve_of_eratosthenes.py)
@@ -40,6 +44,9 @@ Python version: >= 3.6
   * [Greatest Common Divisor](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/gcd.py)
   * [Caesar cipher](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/caesar_cipher.py)
   * [Are two words anagrams?](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/anagram.py)
+  * [Get max palindrome in a string](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/max_palindrome.py)
+  * [Many ways to rotate 1D array](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/str_rotation.py)
+  * [Change decimal number to wanted digit number](https://github.com/shoark7/algorithm-with-python/blob/master/etc_examples/xdecimal_number.py)
 
 * :ledger: Problem solving
   * [Algospot](https://algospot.com/judge/problem/list/)
@@ -117,34 +124,28 @@ Python version: >= 3.6
     - [RGB](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/baekjoon/rgb.py)
     - [Stack Sequence](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/baekjoon/stack_sequence.py)
     - [Tree traversal](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/baekjoon/tree_traverse.py)
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
-    - []()
+
+  * [Euler Project](http://euler.synap.co.kr/)
+    - [No 4. Largest palindrome number](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro004_largest_palindrome.py)
+    - [No 5. LCM](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro005_lcm.py)
+    - [No 6. Square sum](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro006_square_sum.py)
+    - [No 7. Nth prime](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro007_nth_prime.py)
+    - [No 8. Largest substring](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro008_largest_substring.py)
+    - [No 9. Pythagoras number](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro009_pythagoras.py)
+    - [No 10. Prime sum](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro010_prime_sum.py)
+    - [No 11. Max multiple grid](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro011_max_multiple_grid.py)
+    - [No 12. Triangle number](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro012_triangle_number.py)
+    - [No 13. First 10](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro013_first10.py)
+    - [No 14. Max Collaz](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro014_max_collaz.py)
+    - [No 15. path to lattice](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro015_path_to_lattice.py)
+    - [No 16. sum digits](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro016_sum_digit.py)
+    - [No 17. Length of digit](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro017_length_of_digit.py)
+    - [No 18. Max line sum](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro018_max_line_sum.py)
+    - [No 19. Mondays](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro019_monday.py)
+    - [No 20. Sum digits2](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro020_sum_digit2.py)
+    - [No 21. Familiar number](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro021_familiar_number.py)
+    - [No 22. Name value](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro022_name_value.py)
+    - [No 23. Abun n sum](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro023_abun_n_sum.py)
+    - [No 25. fibo D](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro025_fibo_d.py)
+    - [No 27. Euler equation](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro027_euler_equation.py)
+    - [No 29. All squares](https://github.com/shoark7/algorithm-with-python/blob/master/problems_solving/project-euler/pro029_all_squares.py)
