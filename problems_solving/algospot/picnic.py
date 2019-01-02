@@ -1,6 +1,7 @@
 """Solve algospot picnic problem
 
 :input:
+3
 2 1
 0 1
 4 6
