@@ -1,48 +1,40 @@
 """Merge sort in Python
 
-Date: 2018/02/09
+
+Updated to version 2:
+    This time, divide returns [lo, hi] which directs to start and end points of an interval.
+
+Date: 2019/04/19
 """
+def merge_sort(arr):
+    def divide(lo, hi):
+        if lo == hi:
+            return (lo, lo)
+
+        mid = (lo + hi) // 2
+        left = divide(lo, mid)
+        right = divide(mid+1, hi)
+
+        merge(left, right)
+        return (lo, hi)
 
 
-def merge_sort(target, reverse=False):
-    """Merge sort in Python"""
-    def divide(start, end):
-        if end - start > 1:
-            mid = (end + start) // 2
-            divide(start, mid)
-            divide(mid+1, end)
-        merge(start, end)
+    def merge(left, right):
+        ll, lh = left
+        rl, rh = right
 
-    def merge(start, end):
-        mid = (start + end) // 2 + 1
-        left, right = start, mid
-        tmp_list = []
-        if not reverse:
-            while left < mid and right <= end:
-                if target[left] >= target[right]:
-                    tmp_list.append(target[right])
-                    right += 1
-                else:
-                    tmp_list.append(target[left])
-                    left += 1
-        else:
-            while left < mid and right <= end:
-                if target[left] <= target[right]:
-                    tmp_list.append(target[right])
-                    right += 1
-                else:
-                    tmp_list.append(target[left])
-                    left += 1
+        left = ll
+        right = rl
+        tmp = []
 
-        while left < mid:
-            tmp_list.append(target[left])
-            left += 1
+        while left <= lh or right <= rh:
+            if left > lh or (right <= rh and arr[right] < arr[left]):
+                tmp.append(arr[right])
+                right += 1
+            else:
+                tmp.append(arr[left])
+                left += 1
 
-        while right <= end:
-            tmp_list.append(target[right])
-            right += 1
+        arr[ll:rh+1] = tmp
 
-        target[start:end+1] = tmp_list
-
-    divide(0, len(target)-1)
-    return target
+    return arr if not arr else (divide(0, len(arr)-1) and arr)
