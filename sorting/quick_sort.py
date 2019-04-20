@@ -1,51 +1,37 @@
 """Quick sort in Python
 
-This code is mainly from wikipedia.
 Python cache code is brilliant I guess.
 
-Date: 2018/02/23
+Date: 2019/04/20
 """
+def quick_sort(arr):
+    def sort(lo, hi):
+        if lo < hi:
+            pivot = partition(lo, hi)
+            sort(lo, pivot)
+            sort(pivot+1, hi)
 
+    def partition(lo, hi):
+        mid = (lo + hi) // 2
+        pivot = arr[mid]
+        left = lo
+        right = hi
 
-def quick_sort(arr, reverse=False):
-    """Quick sort in Python
+        while True:
+            while left <= hi and arr[left] < pivot:
+                left += 1
 
-    This uses first element of sublist as a pivot.
-    """
-    def partition(start, end):
-        if end - start < 1:
-            return
-        pivot = start
-        left = start + 1
-        right = end
-        done = False
-        if not reverse:
-            while not done:
-                while left <= right and arr[left] <= arr[pivot]:
-                    left += 1
-                while left <= right and arr[right] >= arr[pivot]:
-                    right -= 1
-                if right < left:
-                    done = True
-                else:
-                    arr[left], arr[right] = arr[right], arr[left]
-        else:
-            while not done:
-                while left <= right and arr[left] >= arr[pivot]:
-                    left += 1
-                while left <= right and arr[right] <= arr[pivot]:
-                    right -= 1
-                if right < left:
-                    done = True
-                else:
-                    arr[left], arr[right] = arr[right], arr[left]
+            while right >= 0 and pivot < arr[right]:
+                right -= 1
 
-        arr[right], arr[start] = arr[start], arr[right]
-        partition(start, right - 1)
-        partition(right + 1, end)
+            if left >= right:
+                return right
 
-    partition(0, len(arr)-1)
+            arr[left], arr[right] = arr[right], arr[left]
+            right -= 1
+            left += 1
 
+    sort(0, len(arr)-1)
     return arr
 
 
