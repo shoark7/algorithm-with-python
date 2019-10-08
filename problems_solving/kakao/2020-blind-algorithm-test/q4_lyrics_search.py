@@ -39,10 +39,10 @@ def solution(words, queries):
 
 # 2. Trie 자료구조 이용
 class Trie:
-    def __init__(self, char='', parent=None):
+    def __init__(self, char=''):
         self.children = {}
         self.count = 0
-        self.parent = parent
+        self.char = char
 
 
 def solution(words, queries):
@@ -63,7 +63,7 @@ def solution(words, queries):
                 if c in node.children:
                     node = node.children[c]
                 else:
-                    new_node = Trie(c, node)
+                    new_node = Trie(c)
                     node.children[c] = new_node
                     node = new_node
 
