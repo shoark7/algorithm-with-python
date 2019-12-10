@@ -13,22 +13,26 @@ a, b는 친화쌍이라 하고 a와 b를 각각 친화수(우애수)라고 합�
 def divisor_sum(n):
     if n == 1:
         return 0
+
     s = 1
-    for d in range(2, int(pow(n, 1/2))+1):
+
+    for d in range(2, int(n ** (1/2))+1):
         if n % d == 0:
             s += d
             s += n // d
-    if int(pow(n, 1/2)) ** 2 == n:
-        s -= int(pow(n, 1/2))
+
+            if d == n // d:
+                s -= d
     return s
 
 
-n = 10000
-checker = [0 for _ in range(n+1)]
-for i in range(1, n+1):
-    friend = divisor_sum(i)
-    if not checker[i] and divisor_sum(friend) == i:
-        checker[i] = 1
+SIZE = 10000
+checker = [0] * (SIZE+1)
+
+for n in range(2, SIZE+1):
+    friend = divisor_sum(n)
+    if not checker[n] and friend != n and divisor_sum(friend) == n:
+        checker[n] = 1
         checker[friend] = 1
 
 
