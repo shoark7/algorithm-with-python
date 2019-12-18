@@ -1,92 +1,84 @@
-"""Get minimal number of semesters to graduate
-
-:input:
-2
-4 4 4 4
-0
-1 0
-3 0 1 3
-0
-4 0 1 2 3
-4 0 1 2 3
-3 0 1 3
-4 0 1 2 3
-4 2 2 4
-1 1
-0
-1 3
-1 2
-3 0 2 3
-3 1 2 3
-
-:return:
-3
-IMPOSSIBLE
+"""Return minimum number of semesters to take to graduate
 
 url: https://algospot.com/judge/problem/read/GRADUATION
 ID : GRADUATION
 """
-INF = 987654321
+INF = float('inf')
+
 
 def bit_count(n):
-    if n % 2 == 0:
-        return 0
-    return 1 + bit_count(n // 2)
+    return (n & 1) + bit_count(n >> 1) if n else 0
 
 
-def min_semester(MIN_REQUIRED, prerequisite, classes_open, limit):
-    N, M = len(prerequisite), len(classes_open)
-    cache = [[-1 for _ in range(1 << N)] for _ in range(M)]
+def min_semestered_required(K, L, prerequisites, opened_lectures):
+    N, S = len(prerequisites), len(opened_lectures)
+    cache = [[None] * (1 << N) for _ in range(S)]
 
     def graduate(semester, taken):
-        if bit_count(taken) >= MIN_REQUIRED:
+        if bit_count(taken) >= K:
             return 0
-        elif semester == M:
+        elif semester == S:
             return INF
-        elif cache[semester][taken] != -1:
+
+        if cache[semester][taken] is not None:
             return cache[semester][taken]
 
         ret = INF
-        can_take = classes_open[semester] & ~taken
+
+        can_take = opened_lectures[semester] & ~taken
 
         for i in range(N):
-            if (can_take & (1 << i)) and (taken & prerequisite[i]) != prerequisite[i]:
+            if (can_take & (1 << i)) \
+               and (taken & prerequisites[i]) != prerequisites[i]:
                 can_take &= ~(1 << i)
 
-        take = can_take
-        while take > 0:
-            if bit_count(take) > limit:
-                continue
-            ret = min(ret, graduate(semester+1, taken | take) + 1)
-            take = (take-1) & can_take
+        take = can_take + 1
+
+        while take:
+            take = (take - 1) & can_take
+            if bit_count(take) <= L:
+                ret = min(ret, graduate(semester+1, taken | take) + 1)
 
         ret = min(ret, graduate(semester+1, taken))
-        cache[semester][take] = ret
+        cache[semester][taken] = ret
+
         return ret
 
-    return graduate(0, 0)
+    ans = graduate(0, 0)
+
+    return ans if ans != INF else "IMPOSSIBLE"
 
 
 if __name__ == '__main__':
-    C = int(input())
+    T = int(input())
     ans = []
 
-    for _ in range(C):
-        N, K, M, L = (int(n) for n in input().split())
-        prerequisite = [0 for _ in range(N)]
-        classes_open = [0 for _ in range(M)]
+    for _ in range(T):
+        N, K, S, L = (int(n) for n in input().strip().split())
+        prerequisites = []
+        opened_lectures = []
 
-        for i in range(N):
-            line = [int(n) for n in input().split()[1:]]
-            for c in line:
-                prerequisite[i] |= (1 << c)
+        for _ in range(N):
+            pres = [int(n) for n in input().strip().split()[1:]]
+            pres_bit = 0
 
-        for i in range(M):
-            line = [int(n) for n in input().split()[1:]]
-            for c in line:
-                classes_open[i] |= (1 << c)
+            for p in pres:
+                pres_bit |= (1 << p)
 
-        ans.append(min_semester(K, prerequisite, classes_open, L))
+            prerequisites.append(pres_bit)
 
-    for n in ans:
-        print('IMPOSSIBLE' if n == INF else n)
+        for _ in range(S):
+            lectures = [int(n) for n in input().strip().split()[1:]]
+            lec_bit = 0
+
+            for l in lectures:
+                lec_bit |= (1 << l)
+
+            opened_lectures.append(lec_bit)
+
+        ans.append(min_semestered_required(K, L, prerequisites, opened_lectures))
+
+
+    for ret in ans:
+        print(ret)
+
