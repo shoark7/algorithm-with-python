@@ -42,24 +42,18 @@ def not_effective_last_men_standing_by_park(N, K):
     return ans
 
 
-def last_men_standing(N, K):
-    hit_list = [i+1 for i in range(N)]
+def josephus(N, STRIDE, idx_start_from_1=True):
+    still_alive = list(range(N))
     kill = 0
-    survivor = N
 
-    while survivor > 2:
-        hit_list.pop(kill)
-        survivor -= 1
+    while len(still_alive) > 2:
+        still_alive.pop(kill)
+        kill = (kill + STRIDE - 1) % len(still_alive)
 
-        if kill == survivor:
-            kill = 0
-
-        for _ in range((K-1) % survivor):
-            kill += 1
-            if kill == survivor:
-                kill = 0
-
-    return hit_list
+    if idx_start_from_1:
+        return [n + 1 for n in still_alive]
+    else:
+        return still_alive
 
 
 if __name__ == '__main__':
@@ -67,8 +61,8 @@ if __name__ == '__main__':
     ans = []
 
     for _ in range(C):
-        N, K = (int(n) for n in input().split())
-        ans.append(last_men_standing(N, K))
+        N, STRIDE = (int(n) for n in input().split())
+        ans.append(josephus(N, STRIDE, idx_start_from_1=True))
 
-    for n in ans:
-        print(' '.join(str(l) for l in n))
+    for a, b in ans:
+        print(a, b)
