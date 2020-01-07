@@ -1,3 +1,7 @@
+"""Implement Absolute heap
+
+url: https://www.acmicpc.net/problem/11286
+"""
 from heapq import heappop, heappush
 import sys
 
